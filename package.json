@@ -1,0 +1,31 @@
+{
+  "name": "tech-blog-cms-mvc",
+  "version": "1.0.0",
+  "description": "A blog where developers can share tech knowledge",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/min-hinthar/tech-blog-CMS-MVC.git"
+  },
+  "keywords": [
+    "tech",
+    "blog",
+    "mvc"
+  ],
+  "author": "Min",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/min-hinthar/tech-blog-CMS-MVC/issues"
+  },
+  "homepage": "https://github.com/min-hinthar/tech-blog-CMS-MVC#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.3"
+  }
+}
