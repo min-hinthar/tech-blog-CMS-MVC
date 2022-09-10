@@ -3,6 +3,9 @@ const { Model, DataTypes } = require('sequelize');
 // import config/connection.js
 const sequelize = require('../config/connection');
 
+// extends Model 
+class Post extends Model {}
+
 // Post initi id, title, content, user_id
 Post.init({
     id: {
@@ -18,7 +21,7 @@ Post.init({
             len: [1]
         }
     },
-    conten: {
+    content: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
