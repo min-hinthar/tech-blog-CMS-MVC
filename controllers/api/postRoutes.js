@@ -93,8 +93,47 @@ router.put('/:id', (req, res) => {
             title: req.body.title,
             postText: req.body.postText,
         },
-    )
-})
+        {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(postDataDB => {
+            if(!postDataDB) {
+                res.status(400).json({ 
+                    message: 'Error: Post ID not found'})
+                    return;
+            }
+            res.json(postDataDB)
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err)
+        });
+});
+
+// DELETE route to destroy POST with /:id
+router.delete('/:id', (req, res) => {
+    Post.destroy(
+        {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(postDataDB => {
+            if(!postDataDB) {
+                res.status(400).json({ 
+                    message: 'Error: Post ID not found'})
+                    return;
+            }
+            res.json(postDataDB)
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err)
+        });
+});
+
 
 // export module as router
 module.exports = router;
